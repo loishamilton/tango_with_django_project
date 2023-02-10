@@ -104,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+PASSWORD_HASHERS = [
+	'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+	'django.contrib.auth.hashers.BCryptPasswordHasher',	
+	'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+	'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -117,6 +124,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_URL = 'rango:login'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SESSION_COOKIE_AGE = 1209600
 
 
 MEDIA_ROOT = MEDIA_DIR
